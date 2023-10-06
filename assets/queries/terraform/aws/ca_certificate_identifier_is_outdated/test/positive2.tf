@@ -8,7 +8,7 @@ module "db" {
   engine_version    = "5.7.19"
   instance_class    = "db.t2.large"
   allocated_storage = 5
-  ca_cert_identifier = "rds-ca-2015"
+  ca_cert_identifier = "rds-ca-2019"
 
   name     = "demodb"
   username = "user"

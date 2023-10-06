@@ -9,5 +9,5 @@ resource "aws_db_instance" "negative1" {
   password             = "foobarbaz"
   iam_database_authentication_enabled = true
   storage_encrypted = true
-  ca_cert_identifier = "rds-ca-2019"
+  ca_cert_identifier = "rds-ca-ecc384-g1"
 }

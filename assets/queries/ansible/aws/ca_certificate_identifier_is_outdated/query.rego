@@ -28,7 +28,7 @@ CxPolicy[result] {
 	rds_instance := task[modules[m]]
 	ansLib.checkState(rds_instance)
 
-	rds_instance.ca_certificate_identifier != "rds-ca-2019"
+	rds_instance.ca_certificate_identifier != ['rds-ca-rsa4096-g1', 'rds-ca-ecc384-g1']
 
 	result := {
 		"documentId": id,
@@ -36,7 +36,7 @@ CxPolicy[result] {
 		"resourceName": task.name,
 		"searchKey": sprintf("name={{%s}}.{{%s}}.ca_certificate_identifier", [task.name, modules[m]]),
 		"issueType": "IncorrectValue",
-		"keyExpectedValue": "rds_instance.ca_certificate_identifier should equal to 'rds-ca-2019'",
-		"keyActualValue": "rds_instance.ca_certificate_identifier is not equal to 'rds-ca-2019'",
+		"keyExpectedValue": "rds_instance.ca_certificate_identifier should equal to 'rds-ca-rsa4096-g1' or 'rds-ca-ecc384-g1'",
+		"keyActualValue": "rds_instance.ca_certificate_identifier is not equal to 'rds-ca-rsa4096-g1' or 'rds-ca-ecc384-g1'",
 	}
 }
